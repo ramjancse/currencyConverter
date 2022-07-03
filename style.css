@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+.text {
+  color: #56b19e;
+}
+.marginY {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.currencyHolder {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.select {
+  height: 50px;
+  width: 150px;
+}
