@@ -176,7 +176,7 @@
             <option value="UAH">Ukrainian Hryvnia</option>
             <option value="AED">United Arab Emirates Dirham</option>
             <option value="UYU">Uruguayan Peso</option>
-            <option value="USD">US Dollar</option>
+            <option value="USD" selected>US Dollar</option>
             <option value="UZS">Uzbekistan Som</option>
             <option value="VUV">Vanuatu Vatu</option>
             <option value="VEF">Venezuelan BolÃ­var</option>
@@ -185,8 +185,9 @@
             <option value="ZMK">Zambian Kwacha</option>
           </select>
         </div>
-        <div id="from">1</div>
+        <div><input id="from" type="number" value="1" /></div>
       </div>
+
       <div class="currencyHolder marginY">
         <div>
           <select id="currencyTo" name="currency" class="select">
@@ -202,7 +203,7 @@
             <option value="AZN">Azerbaijani Manat</option>
             <option value="BSD">Bahamian Dollar</option>
             <option value="BHD">Bahraini Dinar</option>
-            <option value="BDT">Bangladeshi Taka</option>
+            <option value="BDT" selected>Bangladeshi Taka</option>
             <option value="BBD">Barbadian Dollar</option>
             <option value="BYR">Belarusian Ruble</option>
             <option value="BEF">Belgian Franc</option>
@@ -357,7 +358,9 @@
             <option value="ZMK">Zambian Kwacha</option>
           </select>
         </div>
-        <div id="to">90.20</div>
+        <div>
+          <input id="to" type="text" value="" />
+        </div>
       </div>
     </div>
     <script src="main.js"></script>

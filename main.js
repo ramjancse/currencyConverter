@@ -1,37 +1,48 @@
 
 const elements = function(){
-    const currencyFromElem = document.getElementById('currencyFrom');
-    const currencyToElem = document.getElementById('currencyTo');
-    const resFromElem = document.getElementById('from');
-    const resToElem = document.getElementById('to');
+    const currencyOneElem = document.getElementById('currencyFrom');
+    const valueOneElem = document.getElementById('from');
+    const currencyTwoElem = document.getElementById('currencyTo');
+    const valueTowElem = document.getElementById('to');
+    const swapBtn = document.getElementById('swap');
     return {
-        currencyFromElem,
-        currencyToElem,
-        resFromElem,
-        resToElem
+        currencyOneElem,
+        valueOneElem,
+        currencyTwoElem,
+        valueTowElem,
+        swapBtn
     };
 }
 const element = elements();
-const { currencyFromElem, currencyToElem, resFromElem, resToElem } = element;
+const { currencyOneElem, valueOneElem, currencyTwoElem, valueTowElem,swapBtn } = element;
 
 function calculate() {
-    const baseCur = currencyFromElem.value;
-    const convertedCur = currencyToElem.value;
+    const currencyOneSelected = currencyOneElem.value;
+    const valueOneInput = valueOneElem.value;
+
+    const currencyTwoSelected = currencyTwoElem.value;
+    const valueTwoInput = valueTowElem.value;
     
-    fetch(`https://free.currconv.com/api/v7/convert?q=${baseCur}_${convertedCur}&compact=ultra&apiKey=e134857b50238ae61347`)
+    
+    // console.log(convertedMoney);
+    
+    fetch(`https://v6.exchangerate-api.com/v6/c63e4c10cf1fbfc9b34ce32d/latest/${currencyOneSelected}`)
         .then((response) => response.json())
         .then((data) => {
-            const countryToCountey = `${baseCur}_${convertedCur}`;
            
-            const rate = data;
-            resFromElem.innerHTML = data
-           
-        })
-        .catch((error) => console.log(error));
-}
+            const convartedTwo = (data.conversion_rates[currencyTwoSelected]).toFixed(5);
+            valueTowElem.value = (convartedTwo * valueOneInput).toFixed(5);  
 
-currencyFromElem.addEventListener('change', calculate);
-currencyToElem.addEventListener('change', calculate);
+        })
+        .catch((error) => console.log(error)); 
+}
+    
+
+currencyOneElem.addEventListener('change', calculate);
+valueOneElem.addEventListener('change', calculate);
+currencyTwoElem.addEventListener('change', calculate);
+valueTowElem.addEventListener('change', calculate);
+
 
 
 calculate();

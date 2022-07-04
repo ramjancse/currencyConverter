@@ -30,3 +30,8 @@
   height: 50px;
   width: 150px;
 }
+input {
+  height: 50px;
+  padding: 5px;
+  font-size: 15px;
+}
